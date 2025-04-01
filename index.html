@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Maiúsculas e Minúsculas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Conversor de Maiúsculas e Minúsculas</h1>
+    <textarea id="inputText" placeholder="Digite ou cole o texto aqui..."></textarea>
+    
+    <div class="buttons">
+        <button onclick="converterMaiusculas()">MAIÚSCULAS</button>
+        <button onclick="converterMinusculas()">minúsculas</button>
+        <button onclick="converterPrimeiraLetra()">Primeira letra</button>
+    </div>
+    
+    <h2>Resultado:</h2>
+    <textarea id="outputText" readonly></textarea>
+</div>
+
+<script>
+    function converterMaiusculas() {
+        var texto = document.getElementById("inputText").value;
+        document.getElementById("outputText").value = texto.toUpperCase();
+    }
+
+    function converterMinusculas() {
+        var texto = document.getElementById("inputText").value;
+        document.getElementById("outputText").value = texto.toLowerCase();
+    }
+
+    function converterPrimeiraLetra() {
+        var texto = document.getElementById("inputText").value;
+        document.getElementById("outputText").value = texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
+    }
+</script>
+
+</body>
+</html>
